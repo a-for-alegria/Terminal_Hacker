@@ -2,6 +2,9 @@
 
 public class Hacker : MonoBehaviour {
     // Game configuration data
+
+    const string HintMenu = "Type 'menu' to go back";
+
     string[] level1Passwords = { "phone", "button", "call", "signal", "screen" };
     string[] level2Passwords = { "internet", "programming", "remote", "connection", "technology" };
     string[] level3Passwords = { "extraterrestrial", "athmosphere", "interstellar", "astronaut", "dehydration" };
@@ -68,6 +71,7 @@ public class Hacker : MonoBehaviour {
         SetRandomPassword();
         Terminal.ClearScreen();
         Terminal.WriteLine("Enter password. Hint: " + password.Anagram());
+        Terminal.WriteLine(HintMenu);
     }
 
     void SetRandomPassword()
@@ -106,7 +110,7 @@ public class Hacker : MonoBehaviour {
         currentScreen = Screen.Win;
         Terminal.ClearScreen();
         ShowLevelReward();
-        Terminal.WriteLine("Type 'menu' to go back");
+        Terminal.WriteLine(HintMenu);
     }
 
     void ShowLevelReward()
